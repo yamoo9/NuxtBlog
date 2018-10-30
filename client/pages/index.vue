@@ -28,12 +28,14 @@ export default {
 
 
 <style lang="sass" scoped>
+@import "~assets/styles/config"
+
 .intro
   position: relative
   height: 200px
   margin-bottom: 20px
   padding: 30px
-  background: darken(#5db4f3, 40%) top center
+  background: darken($color, 40%) url("~assets/images/intro-bg.jpg") center
   background-size: cover
 
   h1
@@ -42,8 +44,8 @@ export default {
     left: 5%
     width: 90%
     font-size: 1.5rem
-    color: lighten(#5db4f3, 20%)
-    background-color: rgba(#5db4f3, 0.26)
+    color: lighten($color, 20%)
+    background-color: rgba($color, 0.26)
     border-radius: 4px
     padding: 10px
 
@@ -56,11 +58,11 @@ export default {
 
 a
   text-decoration: none
-  color: darken(#5db4f3, 20%)
+  color: darken($color, 20%)
   transition: all 0.4s ease
   &:hover .post-content,
   &:active .post-content
-    background-color: rgba(#5db4f3, 0.26)
+    background-color: rgba($color, 0.26)
 
 @media (min-width: 768px)
   .intro h1

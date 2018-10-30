@@ -42,6 +42,8 @@ export default {
 
 
 <style lang="sass" scoped>
+@import "~assets/styles/config"
+
 .post-preview
   border: 1px solid rgba(#aaa, 0.45)
   box-shadow: 0 2px 2px rgba(#aaa, 0.45)
@@ -54,11 +56,11 @@ export default {
 
 a
   text-decoration: none
-  color: darken(#5db4f3, 20%)
+  color: darken($color, 20%)
   transition: all 0.4s ease
   &:hover .post-content,
   &:active .post-content
-    background-color: rgba(#5db4f3, 0.26)
+    background-color: rgba($color, 0.26)
 
 .post-thumbnail
   width: 100%
