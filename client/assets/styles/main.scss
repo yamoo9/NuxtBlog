@@ -1,0 +1,12 @@
+html {
+	box-sizing: border-box;
+	font-size: 10px;
+	* {
+		box-sizing: inherit;
+	}
+}
+
+body {
+	margin: 0;
+	font: 1.4rem/1.5 "Noto Sans KR", sans-serif;
+}
