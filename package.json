@@ -1,0 +1,39 @@
+{
+  "name": "nuxt-blog",
+  "version": "1.0.0",
+  "description": "Nuxt.js를 사용해 블로그 서비스 제작",
+  "author": "yamoo9&lt;yamoo9@naver.com&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "browserslist": "browserslist"
+  },
+  "browserslist": [
+    "last 2 version",
+    "android >= 4.4",
+    "IE >= 10"
+  ],
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^5.0.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.9.4",
+    "nodemon": "^1.11.0",
+    "prettier": "1.14.3",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^7.1.0"
+  }
+}
