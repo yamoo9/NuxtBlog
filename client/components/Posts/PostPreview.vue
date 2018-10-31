@@ -45,7 +45,9 @@ export default {
 @import "~assets/styles/config"
 
 .post-preview
+  overflow: hidden
   border: 1px solid rgba(#aaa, 0.45)
+  border-radius: 6px
   box-shadow: 0 2px 2px rgba(#aaa, 0.45)
   background-color: #fff
   flex: 1 0 90%
@@ -57,10 +59,11 @@ export default {
 a
   text-decoration: none
   color: darken($color, 20%)
-  transition: all 0.4s ease
   &:hover .post-content,
   &:active .post-content
-    background-color: rgba($color, 0.26)
+    background: rgba(lighten($color, 5%), 0.1)
+  &:focus .post-content,
+    box-shadow: 0 -100px 50px 30px rgba($point-color, 0.4)
 
 .post-thumbnail
   width: 100%
@@ -78,6 +81,7 @@ a
 .post-content
   padding: 10px
   text-align: center
+  transition: all 0.4s ease
 
 @media (min-width: 768px)
   .post-preview

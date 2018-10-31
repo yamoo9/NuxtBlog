@@ -20,6 +20,10 @@ module.exports = {
       {
         rel: 'stylesheet',
         href: '//fonts.googleapis.com/css?family=Noto+Sans+KR'
+      },
+      {
+        rel: 'stylesheet',
+        href: '//fonts.googleapis.com/css?family=Changa:200'
       }
     ]
   },

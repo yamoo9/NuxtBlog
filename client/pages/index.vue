@@ -1,7 +1,5 @@
 <template lang="pug">
 .page-home
-  section.intro
-    h1 BLOG 서비스 with Nuxt.js
   section.featured-posts
     post-preview(
       id="1",
@@ -29,25 +27,6 @@ export default {
 
 <style lang="sass" scoped>
 @import "~assets/styles/config"
-
-.intro
-  position: relative
-  height: 200px
-  margin-bottom: 20px
-  padding: 30px
-  background: darken($color, 40%) url("~assets/images/intro-bg.jpg") center
-  background-size: cover
-
-  h1
-    position: absolute
-    top: 5%
-    left: 5%
-    width: 90%
-    font-size: 1.5rem
-    color: lighten($color, 20%)
-    background-color: rgba($color, 0.26)
-    border-radius: 4px
-    padding: 10px
 
 .featured-posts
   display: flex
