@@ -18,15 +18,13 @@ import PostList from '@/components/Posts/PostList'
 import UiButton from '@/components/UI/UiButton'
 
 export default {
+  layout: 'admin',
   components: { PostList, UiButton }
 }
 </script>
 
 <style lang="sass" scoped>
 @import "~assets/styles/config"
-
-.page-admin
-  padding: 20px
 
 .create-post
   border-bottom: 1px solid rgba(#000, 0.2)

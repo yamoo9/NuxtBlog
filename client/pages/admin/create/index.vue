@@ -10,8 +10,32 @@
 import PostForm from '@/components/Admin/PostForm'
 
 export default {
+  layout: 'admin',
   components: {
     PostForm
   }
 }
 </script>
+
+
+<style lang="sass" scoped>
+@import "~assets/styles/config"
+
+.create-post
+  border-bottom: 1px solid rgba(#000, 0.2)
+  padding-bottom: 30px
+
+.page-title
+  margin-bottom: 0
+  font-family: Changa, Sans-Serif
+  letter-spacing: -0.03em
+
+.posts
+	margin-top: 30px
+
+p
+  margin-top: 0
+  color: rgba(#000, 0.5)
+  font-size: 13px
+  letter-spacing: -0.06em
+</style>

@@ -23,6 +23,7 @@ import UiInput from '@/components/UI/UiInput'
 import UiButton from '@/components/UI/UiButton'
 
 export default {
+  layout: 'admin',
   components: { UiInput, UiButton },
   data() {
     return {
