@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.page-header
+  header.page-header(ref="pageHeader")
     h1.page-brand
       nuxt-link(to="/") NUXT BLOG
     .spacer
@@ -32,8 +32,28 @@ export default {
   },
   data() {
     return {
-      bars: [1, 2, 3]
+      bars: [1, 2, 3],
+      scrolled: false,
+      header: null,
+      headerTop: 0
     }
+  },
+  mounted() {
+    this.header = this.$refs.pageHeader
+    this.headerTop = this.header.offsetTop
+    window.addEventListener('scroll', this.detectWindowScrollY)
+  },
+  methods: {
+    detectWindowScrollY() {
+      this.scrolled = window.scrollY > this.headerTop ? true : false
+      const header = this.header
+      this.scrolled
+        ? header.classList.add('scrolled')
+        : header.classList.remove('scrolled')
+    }
+  },
+  beforeDestory() {
+    window.removeEventListener('scroll', this.detectWindowScrollY)
   }
 }
 </script>
@@ -58,6 +78,15 @@ export default {
   padding: 0 10px
   background-color: rgba(#fff, 0.2)
   backdrop-filter: blur(4px)
+  transition: all 0.4s ease-out
+  &.scrolled
+    top: 0
+    left: 0
+    width: 100vw
+    transform: none
+    border-radius: 0
+    background-color: rgba(darken($point-color, 30%), 0.55)
+    backdrop-filter: blur(2px)
 
 .page-brand
   margin: 0 10px
