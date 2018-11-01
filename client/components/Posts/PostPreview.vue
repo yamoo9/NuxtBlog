@@ -1,6 +1,6 @@
 <template lang="pug">
 article.post-preview
-	nuxt-link(:to="'/posts/' + id")
+	nuxt-link(:to="postLink")
 		figure.post-thumbnail(:style="{'background-image': 'url('+ thumbnail +')'}")
 		.post-content
 			h2.post-title {{ title }}
@@ -13,6 +13,10 @@ export default {
   props: {
     id: {
       type: String,
+      required: true
+    },
+    isAdmin: {
+      type: Boolean,
       required: true
     },
     thumbnail: {
@@ -29,6 +33,9 @@ export default {
     }
   },
   computed: {
+    postLink() {
+      return this.isAdmin ? '/admin/' + this.id : '/posts/' + this.id
+    },
     ellipseContent() {
       const ellipseText =
         this.content.length < 65
