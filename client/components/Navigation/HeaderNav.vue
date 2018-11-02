@@ -1,23 +1,23 @@
 <template lang="pug">
-  header.page-header(ref="pageHeader")
-    h1.page-brand
-      nuxt-link(to="/") NUXT BLOG
-    .spacer
-    //- 모바일 내비게이션 토글 버튼
-    button.button.nav-side-toggle(
-      type="button",
-      aria-label="메뉴 토글 버튼"
-      @click="$emit('onNavMenuToggle')"
-    )
-      span.bar(v-for="bar in bars", :key="bar")
-    //- 페이지 내비게이션
-    nav.page-nav
-      ul.page-nav-list
-        li.page-nav-item(
-          v-for="(link, index) in navLinks",
-          :key="index"
-        )
-          nuxt-link(:to="link.route") {{ link.text }}
+header.page-header(ref="pageHeader")
+  h1.page-brand
+    nuxt-link(to="/") NUXT BLOG
+  .spacer
+  //- 모바일 내비게이션 토글 버튼
+  button.button.nav-side-toggle(
+    type="button",
+    aria-label="메뉴 토글 버튼"
+    @click="$emit('onNavMenuToggle')"
+  )
+    span.bar(v-for="bar in bars", :key="bar")
+  //- 페이지 내비게이션
+  nav.page-nav
+    ul.page-nav-list
+      li.page-nav-item(
+        v-for="(link, index) in navLinks",
+        :key="index"
+      )
+        nuxt-link(:to="link.route") {{ link.text }}
 </template>
 
 <script>

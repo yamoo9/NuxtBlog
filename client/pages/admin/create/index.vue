@@ -11,9 +11,7 @@ import PostForm from '@/components/Admin/PostForm'
 
 export default {
   layout: 'admin',
-  components: {
-    PostForm
-  }
+  components: { PostForm }
 }
 </script>
 

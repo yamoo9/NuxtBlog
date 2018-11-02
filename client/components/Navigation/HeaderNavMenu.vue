@@ -1,23 +1,23 @@
 <template lang="pug">
-  .page-header-menu
-    //- 배경(딤 처리)
-    transition(name="fade")
-      .menu-backdrop(
-        v-if="display",
-        @click="$emit('onClose')"
-      )
-    //- 모바일 슬라이드 내비게이션 메뉴
-    transition(name="slide-side")
-      nav.menu(v-if="display")
-        ul.menu-list
-          li.menu-item(
-            v-for="(link, index) in navLinks",
-            :key="index"
-          )
-            a(
-              href="/",
-              @click.prevent="goToRouteAndClose(link)"
-            ) {{ link.text }}
+.page-header-menu
+  //- 배경(딤 처리)
+  transition(name="fade")
+    .menu-backdrop(
+      v-if="display",
+      @click="$emit('onClose')"
+    )
+  //- 모바일 슬라이드 내비게이션 메뉴
+  transition(name="slide-side")
+    nav.menu(v-if="display")
+      ul.menu-list
+        li.menu-item(
+          v-for="(link, index) in navLinks",
+          :key="index"
+        )
+          a(
+            href="/",
+            @click.prevent="goToRouteAndClose(link)"
+          ) {{ link.text }}
 </template>
 
 <script>

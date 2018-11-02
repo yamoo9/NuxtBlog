@@ -12,6 +12,10 @@ const createStore = () => {
     },
     actions: {
       nuxtServerInit(vuexContext, context) {
+        // 서버 환경에서 코드를 실행하려면
+        // if (!process.client) {
+        //   console.log(context.req.session)
+        // }
         const { commit } = vuexContext
         return new Promise((resolve, reject) => {
           setTimeout(() => {

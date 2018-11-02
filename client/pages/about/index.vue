@@ -1,7 +1,7 @@
 <template lang="pug">
-  .page-about.container
-    h1.page-title About
-    p 블로그 서비스 소개
+.page-about.container
+  h1.page-title About
+  p 블로그 서비스 소개
 </template>
 
 <style lang="sass" scoped>

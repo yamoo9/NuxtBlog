@@ -1,8 +1,8 @@
 <template lang="pug">
-  .page-posts.container
-    h1.page-title Posts
-    p 블로그 포스트 리스트
-    post-list(:posts="loadedPosts")
+.page-posts.container
+  h1.page-title Posts
+  p 블로그 포스트 리스트
+  post-list(:posts="loadedPosts")
 </template>
 
 <script>
