@@ -10,7 +10,7 @@
   section.posts
     h2.page-title 포스트 리스트
     p 작성된 글들 입니다.
-    post-list(isAdmin)
+    post-list(isAdmin, :posts="loadedPosts")
 </template>
 
 <script>
@@ -19,7 +19,12 @@ import UiButton from '@/components/UI/UiButton'
 
 export default {
   layout: 'admin',
-  components: { PostList, UiButton }
+  components: { PostList, UiButton },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
+  }
 }
 </script>
 
