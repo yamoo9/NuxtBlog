@@ -3,18 +3,25 @@
   section.create-post-form
     h2.page-title 포스트 생성
     p 새로운 글을 작성합니다.
-    post-form
+    post-form(@submit="onSubmitted")
 </template>
 
 <script>
+import axios from 'axios'
 import PostForm from '@/components/Admin/PostForm'
 
 export default {
   layout: 'admin',
-  components: { PostForm }
+  components: { PostForm },
+  methods: {
+    onSubmitted(newPost) {
+      this.$store
+        .dispatch('createPost', newPost)
+        .then(() => this.$router.push('/admin'))
+    }
+  }
 }
 </script>
-
 
 <style lang="sass" scoped>
 @import "~assets/styles/config"
@@ -29,7 +36,7 @@ export default {
   letter-spacing: -0.03em
 
 .posts
-	margin-top: 30px
+  margin-top: 30px
 
 p
   margin-top: 0

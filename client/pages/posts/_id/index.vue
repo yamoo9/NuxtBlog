@@ -18,8 +18,10 @@
 export default {
   computed: {
     loadedPost() {
-      const id = this.$route.params.id - 1
-      return this.$store.getters.loadedPosts[id]
+      const id = this.$route.params.id
+      return this.$store.getters.loadedPosts.find(
+        post => post.title.replace(/\?/, '') === id
+      )
     }
   }
 }

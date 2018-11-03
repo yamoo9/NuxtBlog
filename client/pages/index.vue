@@ -14,6 +14,16 @@ export default {
       return this.$store.getters.loadedPosts
     }
   }
+  // created() {
+  //   this.$store.commit('setPosts', [
+  //     {
+  //       title: 'test',
+  //       author: 'test',
+  //       content: 'test',
+  //       thumbnail: 'test'
+  //     }
+  //   ])
+  // }
 }
 </script>
 

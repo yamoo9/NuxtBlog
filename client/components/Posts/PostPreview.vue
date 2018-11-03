@@ -34,13 +34,13 @@ export default {
   },
   computed: {
     postLink() {
-      return this.isAdmin ? '/admin/' + this.id : '/posts/' + this.id
+      return this.isAdmin ? '/admin/' + this.title : '/posts/' + this.title
     },
     ellipseContent() {
       const ellipseText =
-        this.content.length < 65
+        this.content.length < 55
           ? this.content
-          : this.content.slice(0, 60) + '...'
+          : this.content.slice(0, 50) + '...'
       return ellipseText
     }
   }

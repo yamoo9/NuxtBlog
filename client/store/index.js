@@ -1,4 +1,5 @@
 import Vuex from 'vuex'
+import axios from 'axios'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -8,40 +9,56 @@ const createStore = () => {
     mutations: {
       setPosts(state, posts) {
         state.loadedPosts = posts
+      },
+      createPost(state, createdPost) {
+        state.loadedPosts.push(createdPost)
+      },
+      updatePost(state, updatedPost) {
+        const idx = state.loadedPosts.findIndex(
+          post => post.id === updatedPost.id
+        )
+        state.loadedPosts[idx] = updatedPost
       }
     },
     actions: {
-      nuxtServerInit(vuexContext, context) {
-        // 서버 환경에서 코드를 실행하려면
-        // if (!process.client) {
-        //   console.log(context.req.session)
-        // }
-        const { commit } = vuexContext
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            commit('setPosts', [
-              {
-                id: '1',
-                title: '빅 데이터',
-                thumbnail: '//goo.gl/mJ5Vsy',
-                content:
-                  '빅 데이터란? 기존 데이터베이스 관리도구의 능력을 넘어서는 대량의 정형 또는 비정형 데이터 집합을 포함한 데이터로부터 가치를 추출하고 결과를 분석하는 기술이다.'
-              },
-              {
-                id: '2',
-                title: '머신 러닝',
-                thumbnail: '//goo.gl/HoiVkE',
-                content:
-                  '머신 러닝은 인공 지능의 한 분야로, 컴퓨터가 학습할 수 있도록 하는 알고리즘과 기술을 개발하는 분야를 말한다.'
-              }
-            ])
-            resolve()
-          }, 1000)
-          // reject(new Error())
-        })
+      async nuxtServerInit({ commit }, context) {
+        try {
+          const { data } = await axios.get(
+            'https://nuxt-blog-y9.firebaseio.com/posts.json'
+          )
+          const postsList = []
+          for (let key in data) {
+            postsList.push({ ...data[key], id: key })
+          }
+          commit('setPosts', postsList)
+        } catch (e) {
+          console.error(e)
+        }
       },
       setPosts({ commit }, posts) {
         commit('setPosts', posts)
+      },
+      createPost({ commit }, createdPost) {
+        createdPost.createdDate = new Date().toLocaleString()
+        createdPost.updatedDate = createdPost.createdDate
+        return axios
+          .post('https://nuxt-blog-y9.firebaseio.com/posts.json', createdPost)
+          .then(res => {
+            commit('createPost', { ...createdPost, id: res.data.name })
+          })
+          .catch(e => console.error(e))
+      },
+      updatePost({ commit }, updatedPost) {
+        updatedPost.updatedDate = new Date().toLocaleString()
+        return axios
+          .put(
+            `https://nuxt-blog-y9.firebaseio.com/posts/${updatedPost.id}.json`,
+            updatedPost
+          )
+          .then(res => {
+            commit('updatePost', updatedPost)
+          })
+          .catch(e => console.error(e))
       }
     },
     getters: {
