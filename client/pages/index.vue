@@ -10,7 +10,7 @@ import PostList from '@/components/Posts/PostList'
 export default {
   components: { PostList },
   head: {
-    title: '홈 - NUXT BLOG',
+    title: '홈',
     meta: [
       {
         hid: 'description',

@@ -21,7 +21,7 @@ export default {
   layout: 'admin',
   components: { PostList, UiButton },
   head: {
-    title: '관리자 메인 - NUXT BLOG',
+    title: '관리자 메인',
     meta: [
       {
         hid: 'description',

@@ -14,7 +14,7 @@ export default {
   layout: 'admin',
   components: { PostForm },
   head: {
-    title: '관리자: 포스트 생성 - NUXT BLOG',
+    title: '관리자: 포스트 생성',
     meta: [
       {
         hid: 'description',

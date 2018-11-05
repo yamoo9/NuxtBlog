@@ -11,7 +11,7 @@ import PostList from '@/components/Posts/PostList'
 export default {
   components: { PostList },
   head: {
-    title: '블로그 - NUXT BLOG',
+    title: '블로그',
     meta: [
       {
         hid: 'description',

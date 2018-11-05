@@ -7,7 +7,7 @@
 <script>
 export default {
   head: {
-    title: '서비스 소개 - NUXT BLOG',
+    title: '서비스 소개',
     meta: [
       {
         hid: 'description',

@@ -26,7 +26,7 @@ export default {
   layout: 'admin',
   components: { UiInput, UiButton },
   head: {
-    title: '인증 - NUXT BLOG',
+    title: '인증',
     meta: [
       {
         hid: 'description',

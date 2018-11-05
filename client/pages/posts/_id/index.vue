@@ -22,7 +22,7 @@ export default {
   head() {
     const post = this.loadedPost
     return {
-      title: `${post.title} - NUXT BLOG`,
+      title: post.title,
       meta: [
         {
           hid: 'description',
