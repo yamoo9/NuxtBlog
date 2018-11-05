@@ -13,6 +13,19 @@ export default {
   layout: 'admin',
   name: 'SinglePost',
   components: { PostForm },
+  head() {
+    const post = this.loadedPost
+    return {
+      title: `'${post.title}' 포스트 수정 - NUXT BLOG`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${post.title} 포스트 수정 페이지 입니다.`
+        }
+      ]
+    }
+  },
   computed: {
     loadedPost() {
       const id = this.$route.params.postId

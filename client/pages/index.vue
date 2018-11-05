@@ -9,21 +9,21 @@ import PostList from '@/components/Posts/PostList'
 
 export default {
   components: { PostList },
+  head: {
+    title: '홈 - NUXT BLOG',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: '홈 페이지입니다.'
+      }
+    ]
+  },
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts
     }
   }
-  // created() {
-  //   this.$store.commit('setPosts', [
-  //     {
-  //       title: 'test',
-  //       author: 'test',
-  //       content: 'test',
-  //       thumbnail: 'test'
-  //     }
-  //   ])
-  // }
 }
 </script>
 

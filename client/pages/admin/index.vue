@@ -20,6 +20,16 @@ import UiButton from '@/components/UI/UiButton'
 export default {
   layout: 'admin',
   components: { PostList, UiButton },
+  head: {
+    title: '관리자 메인 - NUXT BLOG',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: '관리자 메인 페이지입니다.'
+      }
+    ]
+  },
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts

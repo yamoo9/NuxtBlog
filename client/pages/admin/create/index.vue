@@ -13,6 +13,16 @@ import PostForm from '@/components/Admin/PostForm'
 export default {
   layout: 'admin',
   components: { PostForm },
+  head: {
+    title: '관리자: 포스트 생성 - NUXT BLOG',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: '관리자: 포스트 생성 페이지입니다.'
+      }
+    ]
+  },
   methods: {
     onSubmitted(newPost) {
       this.$store

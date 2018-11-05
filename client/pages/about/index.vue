@@ -4,6 +4,22 @@
   p 블로그 서비스 소개
 </template>
 
+<script>
+export default {
+  head: {
+    title: '서비스 소개 - NUXT BLOG',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: '서비스 소개 페이지입니다.'
+      }
+    ]
+  }
+}
+</script>
+
+
 <style lang="sass" scoped>
 .page-title
   margin-bottom: 0

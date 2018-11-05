@@ -16,6 +16,22 @@
 
 <script>
 export default {
+  asyncData(context) {
+    console.log(context)
+  },
+  head() {
+    const post = this.loadedPost
+    return {
+      title: `${post.title} - NUXT BLOG`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${post.title} 페이지입니다.`
+        }
+      ]
+    }
+  },
   computed: {
     loadedPost() {
       const id = this.$route.params.id

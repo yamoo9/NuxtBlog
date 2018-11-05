@@ -10,6 +10,16 @@ import PostList from '@/components/Posts/PostList'
 
 export default {
   components: { PostList },
+  head: {
+    title: '블로그 - NUXT BLOG',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: '블로그 포스트 페이지입니다.'
+      }
+    ]
+  },
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts

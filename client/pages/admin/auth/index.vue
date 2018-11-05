@@ -25,6 +25,16 @@ import UiButton from '@/components/UI/UiButton'
 export default {
   layout: 'admin',
   components: { UiInput, UiButton },
+  head: {
+    title: '인증 - NUXT BLOG',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: '인증 페이지입니다.'
+      }
+    ]
+  },
   data() {
     return {
       isLogin: true
