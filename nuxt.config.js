@@ -3,6 +3,8 @@ const pkg = require('./package')
 const src = 'client'
 
 module.exports = {
+  mode: 'universal',
+
   env: {
     baseUrl: process.env.BASE_URL || 'https://nuxt-blog-y9.firebaseio.com'
   },
@@ -17,7 +19,18 @@ module.exports = {
     }
   },
 
-  mode: 'universal',
+  transition: {
+    name: 'fade',
+    mode: 'out-in',
+    beforeEnter(el) {
+      console.log('페이지 진입', el)
+    }
+  },
+
+  layoutTransition: {
+    name: 'layout',
+    mode: 'out-in'
+  },
 
   srcDir: src,
 
