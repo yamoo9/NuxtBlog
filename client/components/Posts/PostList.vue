@@ -32,7 +32,7 @@ export default {
 <style lang="sass" scoped>
 .post-list
   display: flex
-  justify-content: flex-start
+  justify-content: center
   align-items: flex-start
   flex-wrap: wrap
   padding: 20px

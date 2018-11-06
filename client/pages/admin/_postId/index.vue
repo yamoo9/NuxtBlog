@@ -9,6 +9,7 @@
 <script>
 import axios from 'axios'
 import PostForm from '@/components/Admin/PostForm'
+
 export default {
   layout: 'admin',
   name: 'SinglePost',

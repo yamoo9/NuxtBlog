@@ -23,9 +23,7 @@ const createStore = () => {
     actions: {
       async nuxtServerInit({ commit }, context) {
         try {
-          const { data } = await axios.get(
-            'https://nuxt-blog-y9.firebaseio.com/posts.json'
-          )
+          const { data } = await axios.get(process.env.baseUrl + '/posts.json')
           const postsList = []
           for (let key in data) {
             postsList.push({ ...data[key], id: key })

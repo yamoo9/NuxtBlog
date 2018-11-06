@@ -1,9 +1,25 @@
 const pkg = require('./package')
 
+const src = 'client'
+
 module.exports = {
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://nuxt-blog-y9.firebaseio.com'
+  },
+
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'pageNotFound',
+        path: '*',
+        component: resolve(__dirname, src + '/pages/404.vue')
+      })
+    }
+  },
+
   mode: 'universal',
 
-  srcDir: 'client',
+  srcDir: src,
 
   /*
   ** Headers of the page
@@ -36,12 +52,13 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#d43c6d', height: '6px' },
+  // loading: '~/components/UI/Loading.vue',
 
   /*
   ** Global CSS
   */
-  css: ['~/assets/styles/main.scss'],
+  css: ['~assets/styles/main.scss'],
 
   /*
   ** Plugins to load before mounting the App
