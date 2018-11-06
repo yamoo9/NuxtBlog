@@ -1,6 +1,7 @@
 <template>
   <div>
     <section class="intro"/>
+    <notifications group="noti"/>
     <header-nav
       :nav-links="navLinks"
       @onNavMenuToggle="toggleMenu"/>

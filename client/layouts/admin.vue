@@ -1,6 +1,7 @@
 <template>
   <div>
     <section class="intro"/>
+    <notifications group="admin-noti"/>
     <header-nav
       :nav-links="navLinks"
       @onNavMenuToggle="toggleMenu"/>
@@ -20,6 +21,7 @@ import HeaderNav from '@/components/Navigation/HeaderNav'
 import HeaderNavMenu from '@/components/Navigation/HeaderNavMenu'
 
 export default {
+  name: 'Admin',
   components: {
     HeaderNav,
     HeaderNavMenu

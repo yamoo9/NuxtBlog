@@ -14,14 +14,14 @@ form(@submit.prevent="onSave")
 </template>
 
 <script>
-import UiButton from '@/components/UI/UiButton'
-import UiInput from '@/components/UI/UiInput'
+// import UiButton from '@/components/UI/UiButton'
+// import UiInput from '@/components/UI/UiInput'
 
 export default {
-  components: {
-    UiButton,
-    UiInput
-  },
+  // components: {
+  //   UiButton,
+  //   UiInput
+  // },
   props: {
     post: {
       type: Object,
